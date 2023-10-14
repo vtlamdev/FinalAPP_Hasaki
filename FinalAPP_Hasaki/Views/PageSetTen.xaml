@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.PageSetTen">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="Set_ten" Placeholder="Nhập họ tên"/>
+            <Button x:Name="buttonc_capnhap" Text="CẬP NHẬP" BackgroundColor="#2196f3" Clicked="update_ten"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

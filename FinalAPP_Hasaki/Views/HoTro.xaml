@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.HoTro">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#155034">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="questionmarkicon.png" Grid.Row="0" Grid.Column="0" Margin="10"/>
+                <Label Text="1800 6310" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="White" FontSize="Large" Margin="10"></Label>
+                <Label Text="(Khiếu nại, góp ý)" Grid.Row="0" Grid.Column="2" TextColor="White" FontSize="Medium" Margin="10"></Label>
+
+                <Image Source="hotlineicon.png" Grid.Row="1" Grid.Column="0" Margin="10"/>
+                <Label Text="1800 6324" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" TextColor="White" FontSize="Large" Margin="10"></Label>
+                <Label Text="(Tư vấn)" Grid.Row="1" Grid.Column="2" TextColor="White" FontSize="Medium" Margin="10"></Label>
+
+                <Image Source="hotlineicon.png" Grid.Row="2" Grid.Column="0" Margin="10"/>
+                <Label Text="Chat" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" TextColor="White" FontSize="Large" Margin="10"></Label>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

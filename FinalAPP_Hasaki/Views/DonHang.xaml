@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.DonHang">
+    <Grid Padding="10,20,10,0" BackgroundColor="#cfced3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0" Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Frame OutlineColor="Orange">
+                    <Label Text="Tất cả" FontSize="20" HorizontalTextAlignment="Center" WidthRequest="100">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tapped_tatca"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+                <Frame OutlineColor="Orange">
+                    <Label Text="Chờ thanh toán" FontSize="20" HorizontalTextAlignment="Center" WidthRequest="140">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tapped_cho_thanh_toan"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+                <Frame OutlineColor="Orange">
+                    <Label Text="Đang xử lý" FontSize="20" HorizontalTextAlignment="Center" WidthRequest="140">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tapped_dang_xu_ly"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+                <Frame OutlineColor="Orange">
+                    <Label Text="Thành công" FontSize="20" HorizontalTextAlignment="Center" WidthRequest="140">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tapped_thanh_cong"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+                <Frame OutlineColor="Orange">
+                    <Label Text="Đã hủy" FontSize="20"  HorizontalTextAlignment="Center" WidthRequest="80">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="tapped_da_huy"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <ScrollView Orientation="Vertical" Grid.Row="1">
+            <ListView x:Name="info_trangthai"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete"
+                                          CommandParameter="{Binding .}"
+                                          Text="Delete" IsDestructive="True" />         
+                            </ViewCell.ContextActions>
+                            <Grid BackgroundColor="White" Margin="0,5,0,5" Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                    <Label Text="#" FontSize="20"/>
+                                    <Label Text="{Binding SOHD}" FontSize="20"/>
+                                    <!--<Label Text="|"  FontSize="20"/>
+                                    <Label Text="{Binding NGHD}"  FontSize="20"/>-->
+                                </StackLayout>
+                                <Image  Source="{Binding URL_IMAGE}" Grid.Row="1" Grid.Column="0" HeightRequest="150"/>
+                               
+                                <Grid Grid.Row="1" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"></RowDefinition>
+                                        <RowDefinition Height="auto"></RowDefinition>
+                                        <RowDefinition Height="auto"></RowDefinition>
+                                        <RowDefinition Height="auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding TENSP}" Grid.Row="0" />
+                                    <StackLayout Grid.Row="1" Orientation="Horizontal">
+                                        <Label Text="{Binding DUNGTICH}"/>
+                                        <Label Text="x" HorizontalOptions="EndAndExpand"/>
+                                        <Label Text="{Binding SL}"/>
+                                    </StackLayout>
+                                    <Label Grid.Row="5" Grid.Column="0" Text="{Binding GIA , StringFormat='{0:0,0 đ}'}" FontSize="20" TextColor="red"/>
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </Grid>
+</ContentPage>

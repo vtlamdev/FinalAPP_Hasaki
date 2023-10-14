@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.Page_Set_CCCD">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="Set_cccd" Placeholder="Nhập căn cước công dân"/>
+            <Button x:Name="buttonc_capnhap" Text="CẬP NHẬP" BackgroundColor="#2196f3" Clicked="update_cccd"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

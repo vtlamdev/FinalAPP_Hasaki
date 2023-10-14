@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.DoiMatKhau">
+    <ContentPage.Content>
+        <Grid Padding="10,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Entry x:Name="entry_matkhaucu" Grid.Row="0" Placeholder="Nhập mật khẩu củ" IsPassword="True"/>
+            <Entry x:Name="entry_matkhaumoi" Grid.Row="1" Placeholder="Nhập mật khẩu mới" IsPassword="true"/>
+            <Entry x:Name="entry_nhaplai" Grid.Row="2" Placeholder="Nhập lại mật khẩu" IsPassword="true"/>
+            <Button x:Name="button_update" Grid.Row="3" Text="CẬP NHẬP" BackgroundColor="Green" Clicked="click_doimatkhau"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

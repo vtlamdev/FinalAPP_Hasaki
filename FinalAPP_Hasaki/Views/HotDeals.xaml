@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.HotDeals">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand">
+            <StackLayout Margin="15">
+                <StackLayout>
+                    <Image Source="hot_deals_1.jpg"></Image>
+                    <Label Text="Hasi Omi chăm sóc da chuẩn Nhật" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_2.jpg"></Image>
+                    <Label Text="Mỹ phẩm chuẩn Hàn KVIC" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_3.jpg"></Image>
+                    <Label Text="Selsun 50 Megumi chăm sóc toàn diện" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+
+                <StackLayout>
+                    <Image Source="hot_deals_4.jpg"></Image>
+                    <Label Text="Swisse và Astalift thực phẩm chức năng hàng đầu" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_5.jpg"></Image>
+                    <Label Text="Beauty Buffet Make Prem ưu đãi nhân đôi" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_6.jpg"></Image>
+                    <Label Text="Xinh chuẩn Nhật cùng Club và Kikumasa" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_7.jpg"></Image>
+                    <Label Text="Siêu Sale Tiêu Dùng và Dược Mỹ Phẩm" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_8.jpg"></Image>
+                    <Label Text="Khai trương CN 88 HCM - Quận 8" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_9.jpg"></Image>
+                    <Label Text="Siêu Sale Lễ Hội - Deak 2k 5k - Giảm đến 90%" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+                
+                <StackLayout>
+                    <Image Source="hot_deals_10.jpg"></Image>
+                    <Label Text="Neogen - Re:p sale sâu" TextColor="#e68506" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

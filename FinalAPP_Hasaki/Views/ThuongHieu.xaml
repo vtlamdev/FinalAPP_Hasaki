@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.ThuongHieu">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="FillAndExpand">
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="3*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0"
+                             HeightRequest="20">
+                        <Button Text="Thương hiệu nổi bật"
+                            TextColor="Red"
+                            FontAttributes="Bold"
+                            FontSize="25"/>
+                    </StackLayout>
+
+                    <CollectionView x:Name="Thuonghieu_noibat"
+                                HeightRequest="160"
+                                SelectionMode="Single"
+                                SelectionChanged="Thuonghieu_noibat_SelectionChanged"
+                                Grid.Row="1">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Horizontal"
+                                         VerticalItemSpacing="0"
+                                         HorizontalItemSpacing="10" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10"
+                                  Margin="0"
+                                  BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding URL_IMAGE_HANG}"
+                                       WidthRequest="280"
+                                       Grid.Row="0"
+                                       Aspect="AspectFill" />
+                                    <Label Text="{Binding TENHANG}"
+                                       Grid.Row="1"
+                                       FontSize="Medium"
+                                       TextColor="Green"
+                                       WidthRequest="180"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+
+                <CollectionView x:Name="Homeproduct"
+                                SelectionMode="Single"
+                                SelectionChanged="Homeproduct_SelectionChanged">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"
+                                         Span="2"
+                                         VerticalItemSpacing="0"
+                                         HorizontalItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10"
+                                  Margin="0"
+                                  BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding URL_IMAGE}"
+                                       WidthRequest="180"
+                                       HeightRequest="180"
+                                       Grid.Row="0"
+                                       Aspect="AspectFill" />
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding GIA, StringFormat='{0:0,0 đ}'}"
+                                           FontSize="Medium"
+                                           TextColor="Orange" />
+                                    <Label Text="{Binding TENHANG}"
+                                           FontSize="Medium"
+                                           TextColor="Green"
+                                           WidthRequest="180" />
+                                    <Label Text="{Binding TENSP}"
+                                           FontSize="Medium"
+                                           TextColor="Black"
+                                           WidthRequest="10"
+                                           HeightRequest="160" />
+
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

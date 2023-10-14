@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.ChiTiet"
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms">
+    <ListView x:Name="Product_details"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <ScrollView Grid.Row="0">
+                                <Grid BackgroundColor="#cfced3"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" HeightRequest="400"
+                                       WidthRequest="100"
+                                       Source="{Binding URL_IMAGE}"> 
+                                    
+                                </Image>
+                                    <StackLayout Grid.Row="1">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"></RowDefinition>
+                                                <RowDefinition Height="auto"></RowDefinition>
+                                                <RowDefinition Height="auto"></RowDefinition>
+                                                <RowDefinition Height="auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <StackLayout Grid.Row="0"
+                                                         Orientation="Horizontal"
+                                                         Padding="10">
+                                                <Label Text="{Binding GIA, StringFormat='{0:0,0 đ}'}"
+                                                       TextColor="Orange"
+                                                       FontSize="24"
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="StartAndExpand"
+                                                       VerticalOptions="CenterAndExpand" />
+                                                <Label Text="65% deal đã mua"
+                                                       HorizontalOptions="EndAndExpand"
+                                                       VerticalOptions="CenterAndExpand" />
+                                            </StackLayout>
+
+                                        <StackLayout Grid.Row="1"
+                                                         BackgroundColor="White"
+                                                         Padding="10">
+                                            <Label Text="{Binding TENHANG}" TextColor="Green"
+                                                   FontAttributes="Bold"
+                                                   FontSize="Medium"/>
+                                            <Label Text="{Binding TENSP}" TextColor="Black"
+                                                   FontSize="Medium"/>
+                                            <Label Text="4.7* 62 đánh giá" TextColor="Green"/>
+                                        </StackLayout>
+                                            
+                                            <StackLayout Grid.Row="2"
+                                                         BackgroundColor="White"
+                                                         Padding="10">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"></RowDefinition>
+                                                    <RowDefinition Height="auto"></RowDefinition>
+                                                    <RowDefinition Height="auto"></RowDefinition>
+                                                    <RowDefinition Height="auto"></RowDefinition>
+                                                    <RowDefinition Height="auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <StackLayout Grid.Row="0">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition></RowDefinition>
+                                                            <RowDefinition></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Grid.Row="0"
+                                                                   Grid.Column="0"
+                                                                   Text="Dung tích:"
+                                                                   TextColor="Black"
+                                                                   FontSize="18"/>
+                                                        <Label Grid.Row="1"
+                                                                   Grid.Column="0"
+                                                                   TextColor="Black"
+                                                                   FontAttributes="Bold"
+                                                                   FontSize="18"
+                                                                   Text="{Binding DUNGTICH}" />
+                                                        <Image Source="{Binding URL_IMAGE}"
+                                                                   Grid.Column="1"
+                                                                   Grid.RowSpan="2"
+                                                                   Aspect="AspectFill"
+                                                                   VerticalOptions="CenterAndExpand"
+                                                                   HorizontalOptions="CenterAndExpand" HeightRequest="50" />
+                                                    </Grid>
+                                                </StackLayout>
+                                                <BoxView Grid.Row="1"
+                                                         BackgroundColor="DarkGray"
+                                                         HeightRequest="1" />
+                                                <StackLayout Grid.Row="2">
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"></RowDefinition>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                            <ColumnDefinition></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Grid.Row="0"
+                                                                   Grid.Column="0"
+                                                                   Text="Số lượng"
+                                                                   FontSize="18"/>
+                                                        <StackLayout Grid.Row="0"
+                                                                         Grid.Column="1">
+                                                            <numeric:SfNumericUpDown x:Name="sfNumericUpDown"
+                                                                                         StepValue="1"
+                                                                                         Minimum="1"
+                                                                                         Maximum="60"
+                                                                                         HeightRequest="30"
+                                                                                         Value="1"
+                                                                                         AllowNull="false"
+                                                                                         TextAlignment="Center"
+                                                                                         SpinButtonAlignment="Both"
+                                                                                         ValueChanged="sfNumericUpDown_ValueChanged"
+                                                                                         FormatString="n" />
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Grid>
+                                        </StackLayout>
+                                            
+                                            <StackLayout Grid.Row="3"
+                                                         BackgroundColor="White"
+                                                         Padding="10,20,10,20">
+                                                <Label Text="Mô tả sản phẩm"
+                                                       FontSize="20"
+                                                       FontAttributes="Bold"
+                                                       TextColor="Black"/>
+                                                <Label Text="{Binding MOTA}"
+                                                       LineHeight="1.2"
+                                                       TextColor="Black"
+                                                       FontSize="15"/>
+                                            </StackLayout>
+                                            
+                                            <StackLayout Grid.Row="4"
+                                                         Background="White"
+                                                         Padding="10,20,10,20">
+                                                <Label Text="Thông số sản phẩm"
+                                                       FontSize="20"
+                                                       FontAttributes="Bold" 
+                                                       TextColor="Black"/>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"></RowDefinition>
+                                                        <RowDefinition Height="auto"></RowDefinition>
+                                                        <RowDefinition Height="auto"></RowDefinition>
+                                                        <RowDefinition Height="auto"></RowDefinition>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Row="0"
+                                                           Grid.Column="0"
+                                                           Text="Mã sản phẩm"
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="1"
+                                                           Grid.Column="0"
+                                                           Text="Thương hiệu" 
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="2"
+                                                           Grid.Column="0"
+                                                           Text="Xuất sứ"
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="3"
+                                                           Grid.Column="0"
+                                                           Text="Loại da" 
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="0"
+                                                           Grid.Column="1"
+                                                           TextColor="Black"
+                                                           Text="{Binding MASP}"
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="1"
+                                                           Grid.Column="1"
+                                                           TextColor="Black"
+                                                           Text="{Binding TENHANG}"
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="2"
+                                                           Grid.Column="1"
+                                                           TextColor="Black"
+                                                           Text="{Binding XUATXU}" 
+                                                           FontSize="15"/>
+                                                    <Label Grid.Row="3"
+                                                           Grid.Column="1"
+                                                           TextColor="Black"
+                                                           Text="{Binding LOAIDA}" 
+                                                           FontSize="15"/>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+
+
+
+                                </Grid>
+                            </ScrollView>
+                            <StackLayout Grid.Row="1"
+                                         HeightRequest="50">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Text="CÒN HÀNG"
+                                            Grid.Row="0"
+                                            Grid.Column="0" />
+                                    <Button Text="MUA NGAY"
+                                            Clicked="Button_Clicked"
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            BackgroundColor="red" />
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+</ContentPage>

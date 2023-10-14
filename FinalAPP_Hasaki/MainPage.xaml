@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FinalAPP_Hasaki"
+             xmlns:views="clr-namespace:FinalAPP_Hasaki.Views"
+             x:Class="FinalAPP_Hasaki.MainPage"
+             BackgroundColor="#326e51">
+
+    <Shell.FlyoutHeader>
+        <local:HeaderContentView></local:HeaderContentView>
+    </Shell.FlyoutHeader>
+    <ShellItem Route="waiting" IsVisible="True" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate views:Waiting_page}"/>
+    </ShellItem>
+    <ShellItem Route="DangKy" IsVisible="True" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate views:DangKy}"/>
+    </ShellItem>
+    <ShellItem Route="DangNhap" IsVisible="True" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate views:DangNhap}"/>
+    </ShellItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False">
+        <Tab Route="TrangChu" Icon="trangchuicon.png" Title="Trang chủ">
+            <ShellContent ContentTemplate="{DataTemplate views:TrangChu}"/>
+        </Tab>
+        <Tab Icon="hotdealsicon.png" Title="Hot Deals">
+            <ShellContent ContentTemplate="{DataTemplate views:HotDeals}"/>
+        </Tab>
+        <Tab Icon="thuonghieuicon.png" Title="Thương hiệu">
+            <ShellContent ContentTemplate="{DataTemplate views:ThuongHieu}"/>
+        </Tab>
+        <Tab Icon="questionmarkicon.png" Title="Hasaki hỗ trợ">
+            <ShellContent ContentTemplate="{DataTemplate views:HoTro}"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.TabBarIsVisible="False">
+        <Tab Icon="ktdonhangicon.png" Title="Kiểm tra đơn hàng">
+            <ShellContent ContentTemplate="{DataTemplate views:DonHang}"/>
+        </Tab>
+        <Tab Icon="qltkicon.png" Title="Quản lí tài khoản">
+            <ShellContent ContentTemplate="{DataTemplate views:QLTaiKhoan}"/>
+        </Tab>
+    </FlyoutItem>
+</Shell>

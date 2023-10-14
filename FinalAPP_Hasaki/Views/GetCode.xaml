@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.GetCode">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Entry x:Name="Email_entry" Placeholder="Nhập email"/>
+            <Button x:Name="get_maxacnhan" Text="Lấy mã xác nhận" Grid.Row="1" Clicked="click_getcode"/>
+            <Entry x:Name="Code_entry" Placeholder="Mã xác nhận" Grid.Row="2"/>
+            <Button x:Name="check" Text="Xác nhận" Grid.Row="3" Clicked="click_check_code"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

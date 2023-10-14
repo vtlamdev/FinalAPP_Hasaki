@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.QLTaiKhoan">
+    <ListView x:Name="QLtaikhoan_listview" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid BackgroundColor="#cfced3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Row="0" Orientation="Horizontal" BackgroundColor="#326e52" Padding="10,0,10,0" HeightRequest="60">
+                            <Label Text="Xin chào:" TextColor="White" FontSize="20"/>
+                            <Label Text="{Binding SODIENTHOAI}" TextColor="White" FontSize="20">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="tapped_thongtintaikhoan"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="Số dư:" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="{Binding SODU , StringFormat='{0:0,0 đ}'}" TextColor="Red" FontSize="20" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" BackgroundColor="White" Padding="10">
+                            <Frame BorderColor="Black" CornerRadius="10">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="tapped_capnhapdiachi"/>
+                                </Frame.GestureRecognizers>
+                                <StackLayout>
+
+                                    <Label Text="Cập nhập địa chỉ" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="Vui lòng chọn khu vực để biết chi nhánh gần bạn"/>
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Đơn hàng" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="Xem tất cã đơn hàng" HorizontalOptions="EndAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="click_to_donhang"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="icon_waiting_confirm.png" Grid.Row="0" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="tapped_dangcho"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="Đang chờ" HorizontalOptions="Center" Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="icon_waiting_shipping.png" Grid.Row="0" WidthRequest="20" HeightRequest="20" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="tapped_dangxuly"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="Đang xử lý" HorizontalOptions="Center" Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="icon_delivery.png" Grid.Row="0" WidthRequest="20" HeightRequest="20" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="tapped_thanhcong"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="Thành công" HorizontalOptions="Center" Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="icon_return.png" Grid.Row="0" WidthRequest="20" HeightRequest="20" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="tapped_dahuy"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Text="Đã hủy" HorizontalOptions="Center" Grid.Row="1"/>
+                                </Grid>
+                            </Grid>
+                        </StackLayout>
+                        <Grid Grid.Row="2" Padding="10,0,10,0" BackgroundColor="White" HeightRequest="400">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" >
+                                <Label Text="Sản phẩm đã mua" HorizontalOptions="StartAndExpand">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="tapped_tatca"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="Xem tất cã" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+
+                        <Frame BorderColor="black"  Grid.Row="3" >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="tapped_dangxuat" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="White">
+                                <Label Text="Đăng xuất" HorizontalOptions="StartAndExpand" FontSize="20"/>
+                                <Image Source="turn_off.png" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+   
+</ContentPage>

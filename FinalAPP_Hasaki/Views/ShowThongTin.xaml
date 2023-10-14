@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.Views.ShowThongTin">
+    <ListView x:Name="showthongtin"
+               HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10,10,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                       
+                        <Label Text="Họ Tên" Grid.Row="0" Grid.Column="0" FontSize="20"></Label>
+                        <Label Text="Số Điện thoại" Grid.Row="1" Grid.Column="0" FontSize="20"></Label>
+                        <Label Text="Địa chỉ" Grid.Row="2" Grid.Column="0" FontSize="20"></Label>
+                        <Label Text="Số CCCD" Grid.Row="3" Grid.Column="0" FontSize="20"></Label>
+                        <Label Text="Email" Grid.Row="4" Grid.Column="0" FontSize="20"></Label>
+
+                        <Label Text="{Binding HOTEN}" Grid.Row="0" Grid.Column="1" FontSize="20"></Label>
+                        <Label Text="{Binding SODIENTHOAI}" Grid.Row="1" Grid.Column="1" FontSize="20"></Label>
+                        <Label Text="{Binding DCHI}" Grid.Row="2" Grid.Column="1" FontSize="20"></Label>
+                        <Label Text="{Binding SOCCCD}" Grid.Row="3" Grid.Column="1" FontSize="20"></Label>
+                        <Label Text="{Binding EMAIL}" Grid.Row="4" Grid.Column="1" FontSize="20"></Label>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>

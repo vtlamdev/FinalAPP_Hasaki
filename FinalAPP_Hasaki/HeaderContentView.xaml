@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalAPP_Hasaki.HeaderContentView" 
+             HeightRequest="200">
+    <Grid BackgroundColor="#326e52">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="100" Grid.Row="0">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer/>
+            </Frame.GestureRecognizers>
+            <Image Source="user.png" Aspect="AspectFill"/>
+        </Frame>
+
+        <StackLayout Padding="10"
+                     VerticalOptions="EndAndExpand" Orientation="Vertical" Grid.Row="1">
+            <Label Text="Đăng nhập"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" 
+                   x:Name="lbdangnhap">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Link_dang_nhap"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Text="Đăng ký"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" 
+                   x:Name="lbdangky">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Link_dang_ky"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <Label x:Name="lbsdt"
+                   Text="{Binding sdt}"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   IsVisible="False"
+                   >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Link_tai_khoan"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>
